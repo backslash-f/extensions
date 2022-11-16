@@ -3,6 +3,9 @@ import PackageDescription
 
 let package = Package(
     name: "Extensions",
+    platforms: [
+        .iOS(.v15)
+    ],
     products: [
         .library(
             name: "Extensions",
