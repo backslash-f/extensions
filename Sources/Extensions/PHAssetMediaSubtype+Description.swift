@@ -26,6 +26,6 @@ extension PHAssetMediaSubtype: CustomStringConvertible {
         (.videoStreamed, "videoStreamed"),
         (.videoHighFrameRate, "videoHighFrameRate"),
         (.videoTimelapse, "videoTimelapse"),
-        (.videoCinematic, "videoCinematic") // Needs iOS 15+
+        (.videoCinematic, "videoCinematic") // Needs iOS 15+, macOS 13+
     ]
 }
