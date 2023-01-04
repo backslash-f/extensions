@@ -4,7 +4,7 @@ extension CGImagePropertyOrientation: CustomStringConvertible {
     
     /// Helper that makes instances of type `CGImagePropertyOrientation` print-friendly.
     ///
-    /// E.g.: `print(orientation.description)` // UpMirrored.
+    /// E.g.: `print(orientation.description)` // Left (Rotated 90° CW (ClockWise)
     public var description: String {
         switch rawValue {
         case 1:
@@ -25,6 +25,58 @@ extension CGImagePropertyOrientation: CustomStringConvertible {
             return "\(rawValue), Left (Rotated 90° CW (ClockWise))"
         default:
             return "\(rawValue), Unknown"
+        }
+    }
+    
+    /// Helper that makes instances of type `CGImagePropertyOrientation` print-friendly.
+    ///
+    /// E.g.: `print(orientation.description)` // Up
+    public var shortDescription: String {
+        switch rawValue {
+        case 1:
+            return "Up"
+        case 2:
+            return "Up, Mirrored"
+        case 3:
+            return "Down"
+        case 4:
+            return "Down, Mirrored"
+        case 5:
+            return "Left, Mirrored"
+        case 6:
+            return "Right"
+        case 7:
+            return "Right, Mirrored"
+        case 8:
+            return "Left"
+        default:
+            return "Unknown"
+        }
+    }
+    
+    /// Helper that makes instances of type `CGImagePropertyOrientation` (even more) print-friendly.
+    ///
+    /// E.g.: `print(orientation.emoji)` // ⬆️🪞
+    public var emoji: String {
+        switch rawValue {
+        case 1:
+            return "⬆️"
+        case 2:
+            return "⬆️🪞"
+        case 3:
+            return "⬇️"
+        case 4:
+            return "⬇️🪞"
+        case 5:
+            return "➡️🪞"
+        case 6:
+            return "⬅️"
+        case 7:
+            return "⬅️🪞"
+        case 8:
+            return "➡️"
+        default:
+            return "🤷🏻‍♂️"
         }
     }
 }
