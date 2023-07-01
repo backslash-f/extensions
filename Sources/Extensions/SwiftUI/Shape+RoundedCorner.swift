@@ -1,5 +1,7 @@
 import SwiftUI
 
+#if os(macOS)
+#else
 /// Produces a shape with rounded corners.
 ///
 /// Allows for specifing which corner is to be rounded. For example:
@@ -27,3 +29,4 @@ public extension View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
 }
+#endif
