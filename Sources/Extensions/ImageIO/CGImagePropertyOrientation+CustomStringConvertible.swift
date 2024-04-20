@@ -30,7 +30,7 @@ extension CGImagePropertyOrientation: CustomStringConvertible {
     
     /// Helper that makes instances of type `CGImagePropertyOrientation` print-friendly.
     ///
-    /// E.g.: `print(orientation.description)` // Up
+    /// E.g.: `print(orientation.shortDescription)` // Up
     public var shortDescription: String {
         switch rawValue {
         case 1:
