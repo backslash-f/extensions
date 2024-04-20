@@ -1,7 +1,7 @@
 import ImageIO
 
 extension CGImagePropertyOrientation: CustomStringConvertible {
-    
+
     /// Helper that makes instances of type `CGImagePropertyOrientation` print-friendly.
     ///
     /// E.g.: `print(orientation.description)` // Left (Rotated 90° CW (ClockWise)
@@ -27,7 +27,7 @@ extension CGImagePropertyOrientation: CustomStringConvertible {
             return "\(rawValue), Unknown"
         }
     }
-    
+
     /// Helper that makes instances of type `CGImagePropertyOrientation` print-friendly.
     ///
     /// E.g.: `print(orientation.shortDescription)` // Up
@@ -53,7 +53,7 @@ extension CGImagePropertyOrientation: CustomStringConvertible {
             return "Unknown"
         }
     }
-    
+
     /// Helper that makes instances of type `CGImagePropertyOrientation` (even more) print-friendly.
     ///
     /// E.g.: `print(orientation.emoji)` // ⬆️🪞

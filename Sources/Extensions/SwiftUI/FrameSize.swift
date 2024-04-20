@@ -3,12 +3,12 @@ import SwiftUI
 /// Adds a dashed-colored frame-size container to a view for UI debugging.
 struct FrameSize: ViewModifier {
     let color: Color
-    
+
     func body(content: Content) -> some View {
         content
             .overlay(GeometryReader(content: overlay(for:)))
     }
-    
+
     func overlay(for geometry: GeometryProxy) -> some View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
             Rectangle()
@@ -25,7 +25,7 @@ struct FrameSize: ViewModifier {
 }
 
 public extension View {
-    
+
     /// Applies the `FrameSize` modifier to the view.
     ///
     /// - Parameter color: The stroke `Color`. Default is `.blue`.
@@ -56,7 +56,7 @@ public extension View {
             .frame(maxHeight: 300)
             .frameSize(.pink)
             Spacer()
-                .frame(maxWidth:.infinity)
+                .frame(maxWidth: .infinity)
                 .frameSize(.orange)
         }
         .navigationTitle("Navigation title")

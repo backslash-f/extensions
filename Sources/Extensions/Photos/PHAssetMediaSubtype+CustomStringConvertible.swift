@@ -1,7 +1,7 @@
 import Photos
 
 extension PHAssetMediaSubtype: CustomStringConvertible {
-    
+
     /// Helper that makes instances of type `PHAssetMediaSubtype` print-friendly.
     ///
     /// E.g.: `print(phAssetMediaType.description)` // photoPanorama.
@@ -16,7 +16,7 @@ extension PHAssetMediaSubtype: CustomStringConvertible {
                 .joined(separator: ", ")
         }
     }
-    
+
     public static var debugDescriptions: [(value: Self, description: String)] = [
         (.photoPanorama, "photoPanorama"),
         (.photoHDR, "photoHDR"),

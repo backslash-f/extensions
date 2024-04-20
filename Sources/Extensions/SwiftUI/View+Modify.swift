@@ -1,7 +1,7 @@
 import SwiftUI
 
 public extension View {
-    
+
     /// Allows applying view modifiers based on some criteria.
     ///
     /// Usage example:

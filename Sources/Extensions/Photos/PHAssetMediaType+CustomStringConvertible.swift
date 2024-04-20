@@ -1,7 +1,7 @@
 import Photos
 
 extension PHAssetMediaType: CustomStringConvertible {
-    
+
     /// Helper that makes instances of type `PHAssetMediaType` print-friendly.
     ///
     /// E.g.: `print(phAssetMediaType.description)` // Image.
