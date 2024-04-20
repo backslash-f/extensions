@@ -40,7 +40,7 @@ Use Xcode's [built-in support for SPM](https://developer.apple.com/documentation
 *or...*
 
 ### Package.swift
-In your `Package.swift`, add `AppLogger` as a dependency:
+In your `Package.swift`, add `Extensions` as a dependency:
 
 ```swift
 dependencies: [
