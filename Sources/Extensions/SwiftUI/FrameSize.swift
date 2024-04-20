@@ -36,3 +36,31 @@ public extension View {
 #endif
     }
 }
+
+// MARK: - Preview
+
+#Preview("FrameSize") {
+    NavigationView {
+        VStack {
+            Text("Some text")
+                .padding()
+                .frameSize(.red)
+            Rectangle()
+                .fill(.yellow)
+                .frame(maxWidth: 300, maxHeight: 100)
+                .frameSize(.black)
+            List(["1\t\t", "2\t\t", "3\t\t"], id: \.self) { number in
+                Text(number)
+                    .frameSize(.purple)
+            }
+            .frame(maxHeight: 300)
+            .frameSize(.pink)
+            Spacer()
+                .frame(maxWidth:.infinity)
+                .frameSize(.orange)
+        }
+        .navigationTitle("Navigation title")
+        .frame(maxWidth: .infinity)
+        .frameSize(.blue)
+    }
+}

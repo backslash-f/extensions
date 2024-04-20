@@ -30,3 +30,18 @@ public extension View {
     }
 }
 #endif
+
+// MARK: - Preview
+
+#Preview("RoundedCorner, [.topLeft, .topRight]") {
+    VStack(spacing: .zero) {
+        Rectangle()
+            .fill(.orange)
+            .frame(width: 300, height: 200)
+            .cornerRadius(40, corners: [.topLeft, .topRight])
+        Rectangle()
+            .frame(height: 2)
+            .frame(maxWidth: .infinity)
+            .foregroundColor(.black)
+    }
+}

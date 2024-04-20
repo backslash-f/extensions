@@ -49,3 +49,11 @@ public extension View {
         modifier(FadeOut(edge: edge))
     }
 }
+
+// MARK: - Preview
+
+#Preview("FadeOut, .leading edge") {
+    Rectangle()
+        .fill(.blue)
+        .fadeOut(edge: .leading)
+}
