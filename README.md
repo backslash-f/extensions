@@ -7,6 +7,26 @@
 # Extensions ⚙️
 A collection of useful Swift / SwiftUI extensions.
 
+## Content
+
+Framework | Extension | Description
+--- | --- | ---
+[Foundation](https://developer.apple.com/documentation/foundation) | CGFloat+Degrees | Provides convenient `CGFloat` constants for common angle measurements in radians. Examples:<br> - Rotate a view by 90 degrees:<br>`view.transform = CGAffineTransform(rotationAngle: .degrees_90)`<br> - Set a circular progress bar to half:<br>`progressBar.progress = .degrees_180 / .degrees_360`
+| Collection+Safe | Avoids `Fatal error: Index out of range (out of bounds index)`<br>Returns the element at the specified index if it is within bounds; otherwise `nil`.
+| Optional+ToString | Allows printing `nil` when the optional is `nil`, or the wrapped value itself. For example: `123` instead of `Optional(123)`.
+| String+EmptyOrWhiteSpace | Returns `true` if the string is empty or contains only whitespace and newline characters.
+| String+Masking | Hides sensitive information. Returns `••••` when `self` is not empty.
+[Image I/O](https://developer.apple.com/documentation/ImageIO) | CGImagePropertyOrientation+CaseIterable | Extends `CGImagePropertyOrientation` to conform to `CaseIterable`, providing a collection of all orientation cases.
+| CGImagePropertyOrientation+CustomStringConvertible | Makes `CGImagePropertyOrientation` instances print-friendly. Examples:<br> - `print(orientation.description)`<br>Output: **`Left (Rotated 90° CW (ClockWise)`**<br> - `print(orientation.shortDescription)`<br>Output: **`Up`**<br> - `print(orientation.emoji)`<br>Output (orientation is up/mirrored): **`⬆️🪞`**<br> - `print(orientation.emoji)`<br>Output (orientation is unknown): **`🤷🏻‍♂️`**
+| CGImagePropertyOrientation+UIImage.Orientation | Facilitates the conversion between `CGImagePropertyOrientation` and `UIImage.Orientation`, ensuring accurate mapping despite their differing underlying numeric values.
+[PhotoKit](https://developer.apple.com/documentation/photokit) | PHAssetMediaSubtype+CustomStringConvertible | Makes `PHAssetMediaSubtype` instances print-friendly. Examples:<br> - `print(phAssetMediaType.description)`<br>Output: `photoPanorama`<br> - `print(phAssetMediaType.description)`<br>Output: `videoHighFrameRate`
+| PHAssetMediaType+CustomStringConvertible | Makes `PHAssetMediaType` instances print-friendly. Examples:<br> - `print(phAssetMediaType.description)`<br>Output: `Image`<br> - `print(phAssetMediaType.description)`<br>Output: `Audio`
+[SwiftUI](https://developer.apple.com/documentation/swiftui) | FadeOut | Fades out the edge of a view based on a given `FadeOut.Edge`.
+| FrameSize | Adds a dashed-colored frame-size container to a view for UI debugging.
+| Shape+RoundedCorner | Produces a shape with rounded corners. Allows specifying which corner is to be rounded. For example:<br>`.cornerRadius(20, corners: [.topLeft, .bottomRight])`
+| StatefulPreviewWrapper | Makes Xcode's preview canvas fully functional for previewing SwiftUI views that take `@Bindings` as input.
+| View+Modify | Allows applying view modifiers based on some criteria. For example:<br>`Text("Some").modify { if someCondition { $0.bold() } }`
+
 ## Integration
 ### Xcode
 Use Xcode's [built-in support for SPM](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
@@ -18,7 +38,7 @@ In your `Package.swift`, add `AppLogger` as a dependency:
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/backslash-f/extensions", from: "0.0.1")
+  .package(url: "https://github.com/backslash-f/extensions", from: "1.0.0")
 ]
 ```
 
