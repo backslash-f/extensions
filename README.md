@@ -6,3 +6,33 @@
 
 # Extensions ⚙️
 A collection of useful Swift / SwiftUI extensions.
+
+## Integration
+### Xcode
+Use Xcode's [built-in support for SPM](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
+
+*or...*
+
+### Package.swift
+In your `Package.swift`, add `AppLogger` as a dependency:
+
+```swift
+dependencies: [
+  .package(url: "https://github.com/backslash-f/extensions", from: "0.0.1")
+]
+```
+
+Associate the dependency with your target:
+
+```swift
+targets: [
+  .target(
+    name: "YourAppName",
+    dependencies: [
+      .product(name: "Extensions", package: "extensions")
+    ]
+  )
+]
+```
+
+Run: `swift build`
