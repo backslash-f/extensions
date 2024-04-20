@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// Allows for previewing SwiftUI view that takes `@Bindings` as input.
-/// Makes Xcode's preview canvas fully functional.
+/// Makes Xcode's preview canvas fully functional for previewing
+/// SwiftUI views that take `@Bindings` as input.
 ///
 /// Usage example:
 /// ```

@@ -4,7 +4,7 @@ import SwiftUI
 #else
 /// Produces a shape with rounded corners.
 ///
-/// Allows for specifing which corner is to be rounded. For example:
+/// Allows specifying which corner is to be rounded. For example:
 /// ```
 /// .cornerRadius(20, corners: [.topLeft, .bottomRight])
 /// ```

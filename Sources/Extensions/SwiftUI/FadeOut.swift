@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Fades out the edge of a view, based on a given `FadeOut.Edge`.
+/// Fades out the edge of a view based on a given `FadeOut.Edge`.
 public struct FadeOut: ViewModifier {
     /// The edge to be faded out.
     public let edge: Edge

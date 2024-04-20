@@ -2,7 +2,7 @@ import SwiftUI
 
 public extension View {
     
-    /// Allows for using view modifiers between different iOS versions.
+    /// Allows applying view modifiers based on some criteria.
     ///
     /// Usage example:
     ///
@@ -24,7 +24,7 @@ public extension View {
     /// ```
     /// Text("LOLSTRING")
     ///   .modify {
-    ///     if #available(iOS 15.0, *) {
+    ///     if someCondition {
     ///       $0.badge(2)
     ///     }
     ///     // Fallback not required. The view will stay untouched.

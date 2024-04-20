@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Adds a coloured frame size view **around** other views -- for debugging purposes.
+/// Adds a dashed-colored frame-size container to a view for UI debugging.
 struct FrameSize: ViewModifier {
     let color: Color
     
