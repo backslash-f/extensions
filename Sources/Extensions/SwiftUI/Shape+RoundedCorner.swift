@@ -29,7 +29,6 @@ public extension View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
 }
-#endif
 
 // MARK: - Preview
 
@@ -45,3 +44,4 @@ public extension View {
             .foregroundColor(.black)
     }
 }
+#endif
