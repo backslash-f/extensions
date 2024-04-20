@@ -27,6 +27,12 @@ Framework | Extension | Description
 &#xfeff;| StatefulPreviewWrapper | Makes Xcode's preview canvas fully functional for previewing SwiftUI views that take `@Bindings` as input.
 &#xfeff;| View+Modify | Allows applying view modifiers based on some criteria. For example:<br>`Text("Some").modify { if someCondition { $0.bold() } }`
 
+## SwiftUI Extension Screenshots
+
+FadeOut | FrameSize | RoundedCorner
+--- | --- | ---
+<img width="296" alt="fadeOut" src="https://github.com/backslash-f/extensions/assets/664951/4ee544dc-6dfc-4fd0-8f4c-62dc17ef04f6"> | <img width="296" alt="frameSize" src="https://github.com/backslash-f/extensions/assets/664951/861c5c83-1bea-4a2b-a6c4-da782b47ef25"> | <img width="296" alt="roundedCorner" src="https://github.com/backslash-f/extensions/assets/664951/283c4895-e30d-4fb8-9e35-592838611bfe">
+
 ## Integration
 ### Xcode
 Use Xcode's [built-in support for SPM](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
