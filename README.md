@@ -11,7 +11,7 @@ A collection of useful Swift / SwiftUI extensions.
 
 Framework | Extension | Description
 --- | --- | ---
-[Foundation](https://developer.apple.com/documentation/foundation) | CGFloat+Degrees | Provides convenient `CGFloat` constants for common angle measurements in radians. Examples:<br> - Rotate a view by 90 degrees:<br>`view.transform = CGAffineTransform(rotationAngle: .degrees_90)`<br> - Set a circular progress bar to half:<br>`progressBar.progress = .degrees_180 / .degrees_360`
+[Foundation](https://developer.apple.com/documentation/foundation) | CGFloat+Degrees | Provides convenient `CGFloat` constants for common angle measurements in radians. Examples:<br> - Rotate a view by 90 degrees:<br>`view.transform = CGAffineTransform(rotationAngle: .degrees90)`<br> - Set a circular progress bar to half:<br>`progressBar.progress = .degrees180 / .degrees360`
 | Collection+Safe | Avoids `Fatal error: Index out of range (out of bounds index)`<br>Returns the element at the specified index if it is within bounds; otherwise `nil`.
 | Optional+ToString | Allows printing `nil` when the optional is `nil`, or the wrapped value itself. For example: `123` instead of `Optional(123)`.
 | String+EmptyOrWhiteSpace | Returns `true` if the string is empty or contains only whitespace and newline characters.
