@@ -14,6 +14,9 @@ import UIKit
  */
 
 public extension CGImagePropertyOrientation {
+
+    /// Initializes a `CGImagePropertyOrientation` from the given `UIImage.Orientation`,
+    /// providing a mapping between the different orientation systems.
     init?(_ uiOrientation: UIImage.Orientation) {
         switch uiOrientation {
         case .up:
@@ -39,6 +42,9 @@ public extension CGImagePropertyOrientation {
 }
 
 public extension UIImage.Orientation {
+
+    /// Initializes a `UIImage.Orientation` from the given `CGImagePropertyOrientation`,
+    /// providing a mapping between the different orientation systems.
     init(_ cgOrientation: CGImagePropertyOrientation) {
         switch cgOrientation {
         case .up:
