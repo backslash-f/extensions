@@ -14,6 +14,7 @@ Framework | Extension | Description
 [Foundation](https://developer.apple.com/documentation/foundation) | CGFloat+Degrees | Provides convenient `CGFloat` constants for common angle measurements in radians. Examples:<br> - Rotate a view by 90 degrees:<br>`view.transform = CGAffineTransform(rotationAngle: .degrees90)`<br> - Set a circular progress bar to half:<br>`progressBar.progress = .degrees180 / .degrees360`
 &#xfeff;| Collection+Safe | Avoids `Fatal error: Index out of range (out of bounds index)`<br>Returns the element at the specified index if it is within bounds; otherwise `nil`.
 &#xfeff;| Optional+ToString | Allows printing `nil` when the optional is `nil`, or the wrapped value itself. For example: `123` instead of `Optional(123)`.
+&#xfeff;| String+Decimal | Formats a numeric string to a specified number of decimal places. For example: `"351.6632141234"` becomes `"351.66"`.
 &#xfeff;| String+EmptyOrWhiteSpace | Returns `true` if the string is empty or contains only whitespace and newline characters.
 &#xfeff;| String+Masking | Hides sensitive information. Returns `••••` when `self` is not empty.
 [Image I/O](https://developer.apple.com/documentation/ImageIO) | CGImagePropertyOrientation+CaseIterable | Extends `CGImagePropertyOrientation` to conform to `CaseIterable`, providing a collection of all orientation cases.
