@@ -11,22 +11,23 @@ A collection of useful Swift / SwiftUI extensions.
 
 Framework | Extension | Description
 --- | --- | ---
-[Foundation](https://developer.apple.com/documentation/foundation) | CGFloat+Degrees | Provides convenient `CGFloat` constants for common angle measurements in radians. Examples:<br> - Rotate a view by 90 degrees:<br>`view.transform = CGAffineTransform(rotationAngle: .degrees90)`<br> - Set a circular progress bar to half:<br>`progressBar.progress = .degrees180 / .degrees360`
-&#xfeff;| Collection+Safe | Avoids `Fatal error: Index out of range (out of bounds index)`<br>Returns the element at the specified index if it is within bounds; otherwise `nil`.
-&#xfeff;| Optional+ToString | Allows printing `nil` when the optional is `nil`, or the wrapped value itself. For example: `123` instead of `Optional(123)`.
-&#xfeff;| String+Decimal | Formats a numeric string to a specified number of decimal places. For example: `"351.6632141234"` becomes `"351.66"`.
-&#xfeff;| String+EmptyOrWhiteSpace | Returns `true` if the string is empty or contains only whitespace and newline characters.
-&#xfeff;| String+Masking | Hides sensitive information. Returns `••••` when `self` is not empty.
-[Image I/O](https://developer.apple.com/documentation/ImageIO) | CGImagePropertyOrientation+CaseIterable | Extends `CGImagePropertyOrientation` to conform to `CaseIterable`, providing a collection of all orientation cases.
-&#xfeff;| CGImagePropertyOrientation+CustomStringConvertible | Makes `CGImagePropertyOrientation` instances print-friendly. Examples:<br> - `print(orientation.description)`<br>Output: **`Left (Rotated 90° CW (ClockWise)`**<br> - `print(orientation.shortDescription)`<br>Output: **`Up`**<br> - `print(orientation.emoji)`<br>Output (orientation is up/mirrored): **`⬆️🪞`**<br> - `print(orientation.emoji)`<br>Output (orientation is unknown): **`🤷🏻‍♂️`**
-&#xfeff;| CGImagePropertyOrientation+UIImage.Orientation | Facilitates the conversion between `CGImagePropertyOrientation` and `UIImage.Orientation`, ensuring accurate mapping despite their differing underlying numeric values.
-[PhotoKit](https://developer.apple.com/documentation/photokit) | PHAssetMediaSubtype+CustomStringConvertible | Makes `PHAssetMediaSubtype` instances print-friendly. Examples:<br> - `print(phAssetMediaType.description)`<br>Output: `photoPanorama`<br> - `print(phAssetMediaType.description)`<br>Output: `videoHighFrameRate`
-&#xfeff;| PHAssetMediaType+CustomStringConvertible | Makes `PHAssetMediaType` instances print-friendly. Examples:<br> - `print(phAssetMediaType.description)`<br>Output: `Image`<br> - `print(phAssetMediaType.description)`<br>Output: `Audio`
-[SwiftUI](https://developer.apple.com/documentation/swiftui) | FadeOut | Fades out the edge of a view based on a given `FadeOut.Edge`.
-&#xfeff;| FrameSize | Adds a dashed-colored frame-size container to a view for UI debugging.
-&#xfeff;| Shape+RoundedCorner | Produces a shape with rounded corners. Allows specifying which corner is to be rounded. For example:<br>`.cornerRadius(20, corners: [.topLeft, .bottomRight])`
-&#xfeff;| StatefulPreviewWrapper | Makes Xcode's preview canvas fully functional for previewing SwiftUI views that take `@Bindings` as input.
-&#xfeff;| View+Modify | Allows applying view modifiers based on some criteria. For example:<br>`Text("Some").modify { if someCondition { $0.bold() } }`
+[Foundation](https://developer.apple.com/documentation/foundation) | `CGFloat+Degrees` | Provides convenient `CGFloat` constants for common angle measurements in radians. Examples:<br> - Rotate a view by 90 degrees:<br>`view.transform = CGAffineTransform(rotationAngle: .degrees90)`<br> - Set a circular progress bar to half:<br>`progressBar.progress = .degrees180 / .degrees360`
+&#xfeff;| `Collection+Safe` | Avoids `Fatal error: Index out of range (out of bounds index)`<br>Returns the element at the specified index if it is within bounds; otherwise `nil`.
+&#xfeff;| `Optional+ToString` | Allows printing `nil` when the optional is `nil`, or the wrapped value itself. For example: `123` instead of `Optional(123)`.
+&#xfeff;| `String+Decimal` | Formats a numeric string to a specified number of decimal places. For example: `"351.6632141234"` becomes `"351.66"`.
+&#xfeff;| `String+EmptyOrWhiteSpace` | Returns `true` if the string is empty or contains only whitespace and newline characters.
+&#xfeff;| `String+Masking` | Hides sensitive information. Returns `••••` when `self` is not empty.
+&#xfeff;| `String+Split` | Returns the first component of the string up to, but not including, the first occurrence of a given separator.
+[Image I/O](https://developer.apple.com/documentation/ImageIO) | `CGImagePropertyOrientation+CaseIterable` | Extends `CGImagePropertyOrientation` to conform to `CaseIterable`, providing a collection of all orientation cases.
+&#xfeff;| `CGImagePropertyOrientation+CustomStringConvertible` | Makes `CGImagePropertyOrientation` instances print-friendly. Examples:<br> - `print(orientation.description)`<br>Output: **`Left (Rotated 90° CW (ClockWise)`**<br> - `print(orientation.shortDescription)`<br>Output: **`Up`**<br> - `print(orientation.emoji)`<br>Output (orientation is up/mirrored): **`⬆️🪞`**<br> - `print(orientation.emoji)`<br>Output (orientation is unknown): **`🤷🏻‍♂️`**
+&#xfeff;| `CGImagePropertyOrientation+UIImage.Orientation` | Facilitates the conversion between `CGImagePropertyOrientation` and `UIImage.Orientation`, ensuring accurate mapping despite their differing underlying numeric values.
+[PhotoKit](https://developer.apple.com/documentation/photokit) | `PHAssetMediaSubtype+CustomStringConvertible` | Makes `PHAssetMediaSubtype` instances print-friendly. Examples:<br> - `print(phAssetMediaType.description)`<br>Output: `photoPanorama`<br> - `print(phAssetMediaType.description)`<br>Output: `videoHighFrameRate`
+&#xfeff;| `PHAssetMediaType+CustomStringConvertible` | Makes `PHAssetMediaType` instances print-friendly. Examples:<br> - `print(phAssetMediaType.description)`<br>Output: `Image`<br> - `print(phAssetMediaType.description)`<br>Output: `Audio`
+[SwiftUI](https://developer.apple.com/documentation/swiftui) | `FadeOut` | Fades out the edge of a view based on a given `FadeOut.Edge`.
+&#xfeff;| `FrameSize` | Adds a dashed-colored frame-size container to a view for UI debugging.
+&#xfeff;| `Shape+RoundedCorner` | Produces a shape with rounded corners. Allows specifying which corner is to be rounded. For example:<br>`.cornerRadius(20, corners: [.topLeft, .bottomRight])`
+&#xfeff;| `StatefulPreviewWrapper` | Makes Xcode's preview canvas fully functional for previewing SwiftUI views that take `@Bindings` as input.
+&#xfeff;| `View+Modify` | Allows applying view modifiers based on some criteria. For example:<br>`Text("Some").modify { if someCondition { $0.bold() } }`
 
 ## SwiftUI Extension Screenshots
 
