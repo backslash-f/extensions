@@ -5,27 +5,49 @@ import SwiftUI
 ///
 /// Usage example:
 /// ```
-/// struct YourView_Previews: PreviewProvider {
-///     static var previews: some View {
-///         StatefulPreviewWrapper(false) {
-///             YourView(binding: $0)
-///         }
-///     }
+/// #Preview {
+///    StatefulPreviewWrapper([false]) { bindings in
+///        YourView(binding: bindings[0])
+///    }
+/// }
+/// ```
+/// Or:
+/// ```
+/// #Preview {
+///    let firstState = false
+///    let secondState = true
+///    let thirdState = true
+///
+///    let states = [firstState, secondState, thirdState]
+///
+///    return StatefulPreviewWrapper(states) { bindings in
+///        YourView(binding: bindings[0])
+///        AnotherView(binding: bindings[1])
+///        YetAnotherView(binding: bindings[2])
+///    }
 /// }
 /// ```
 ///
 /// Extracted from [this thread](https://developer.apple.com/forums/thread/118589).
-public struct StatefulPreviewWrapper<Value, Content: View>: View {
-    @State var value: Value
+public struct StatefulPreviewWrapper<Value: Equatable, Content: View>: View {
+    @State private var states: [Value]
 
-    var content: (Binding<Value>) -> Content
+    private var content: ([Binding<Value>]) -> Content
 
-    public var body: some View {
-        content($value)
+    public init(
+        _ initialStates: [Value],
+        content: @escaping ([Binding<Value>]) -> Content
+    ) {
+        self._states = State(initialValue: initialStates)
+        self.content = content
     }
 
-    public init(_ value: Value, content: @escaping (Binding<Value>) -> Content) {
-        self._value = State(wrappedValue: value)
-        self.content = content
+    public var body: some View {
+        content(states.indices.map { index in
+            Binding(
+                get: { states[index] },
+                set: { states[index] = $0 }
+            )
+        })
     }
 }
